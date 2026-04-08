@@ -71,7 +71,7 @@ function handleGuess(button, char) {
     if (selectedWord.includes(char)) {
         guessedLetters.push(char);
         button.classList.add("correct");
-        // TODO: هحط صوت تاني هنا
+        // TODO: another voice for correct answer.
         renderWord();
     } else {
         wrongGuesses++;
