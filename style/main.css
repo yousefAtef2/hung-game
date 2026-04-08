@@ -1,0 +1,88 @@
+body {
+    background: #1a1a2e;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.game-container {
+    background: #16213e;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+}
+
+h1 { color: #e94560; margin-bottom: 20px; }
+
+/* المشنقة */
+.hangman-box svg {
+    width: 150px;
+    height: 150px;
+    stroke: #fff;
+    stroke-width: 4;
+    fill: none;
+    stroke-linecap: round;
+}
+
+.draw { display: none; } /* إخفاء الأجزاء في البداية */
+
+.word-display {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 25px 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.word-display span {
+    border-bottom: 3px solid #e94560;
+    width: 30px;
+    text-transform: uppercase;
+}
+
+/* الكيبورد */
+.keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.key {
+    background: #0f3460;
+    border: none;
+    color: white;
+    padding: 12px;
+    width: 45px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: 0.2s;
+    text-transform: uppercase;
+}
+
+.key:hover { background: #e94560; }
+.key:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.key.correct { background: #28a745 !important; }
+.key.wrong { background: #dc3545 !important; }
+
+#reset-btn {
+    margin-top: 30px;
+    padding: 10px 25px;
+    background: #e94560;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Hangman </title>
+    <link rel="stylesheet" href="style/main.css">
+</head >
+<body style="background-color: rgb(99, 216, 177);">
+
+    <div class="game-container">
+        <h1>Hangman</h1>
+        
+        <div class="hangman-box">
+            <svg id="hangman-svg" viewBox="0 0 100 100">
+                <!-- المشنقة -->
+                <line x1="10" y1="90" x2="90" y2="90" />
+                <line x1="30" y1="90" x2="30" y2="10" />
+                <line x1="30" y1="10" x2="70" y2="10" />
+                <line x1="70" y1="10" x2="70" y2="20" />
+                <!-- أجزاء الجسم ستظهر برمجياً -->
+                <circle id="head" cx="70" cy="30" r="10" class="draw" />
+                <line id="body" x1="70" y1="40" x2="70" y2="70" class="draw" />
+                <line id="l-arm" x1="70" y1="50" x2="55" y2="40" class="draw" />
+                <line id="r-arm" x1="70" y1="50" x2="85" y2="40" class="draw" />
+                <line id="l-leg" x1="70" y1="70" x2="55" y2="85" class="draw" />
+                <line id="r-leg" x1="70" y1="70" x2="85" y2="85" class="draw" />
+            </svg>
+        </div>
+
+        <div id="word-display" class="word-display"></div>
+        <p id="hint">التلميح: <span id="hint-text"></span></p>
+        <p id="guesses">المحاولات الخاطئة: <span id="wrong-count">0/6</span></p>
+
+        <div id="keyboard" class="keyboard"></div>
+
+        <button id="reset-btn">لعبة جديدة</button>
+    </div>
+    <br><br><br><br><br><br>
+
+    <!-- صوت النقرة -->
+    <audio id="click-sound" src="ribhavagrawal-female-character-screamgaming-style-230506.mp3"></audio>
+
+    <script src="App.js"></script>
+</body>
+</html>
