@@ -3,7 +3,6 @@ const wordList = [
     { word: "JAVASCRIPT", hint: "لغة برمجة الويب الأساسية" },
     { word: "CSS", hint: "مسؤولة عن تصميم وتنسيق المواقع" },
     { word: "PYTHON", hint: "لغة برمجة مشهورة بالذكاء الاصطناعي" },
-    { word: "PYTHON", hint: "لغة برمجة مشهورة بالذكاء الاصطناعي" }
 ];
 
 let selectedWord, selectedHint;
@@ -16,7 +15,9 @@ const hintText = document.getElementById("hint-text");
 const wrongCountText = document.getElementById("wrong-count");
 const keyboard = document.getElementById("keyboard");
 const clickSound = document.getElementById("click-sound");
+const Sound = document.getElementById("sound");
 const bodyParts = document.querySelectorAll(".draw");
+
 
 // تشغيل اللعبة
 function initGame() {
@@ -43,7 +44,7 @@ function renderWord() {
     ).join("");
 
     if (selectedWord.length === guessedLetters.length) {
-        setTimeout(() => alert("مبروك! لقد فزت 🥳"), 200);
+        Sound.play()&&setTimeout(() =>alert("مبروك! لقد فزت 🥳"), 200);
     }
 }
 
@@ -72,6 +73,8 @@ function handleGuess(button, char) {
         guessedLetters.push(char);
         button.classList.add("correct");
         // TODO: another voice for correct answer.
+        // Sound.play();
+        
         renderWord();
     } else {
         wrongGuesses++;
